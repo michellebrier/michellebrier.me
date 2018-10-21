@@ -1,6 +1,6 @@
-.App {
+/*.App {
   text-align: center;
-}
+}*/
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -31,17 +31,79 @@
   }
 }
 
+/* yeeeeeeeet */
+
+/*.container {
+  min-width: 700px !important;
+}*/
+
+a:hover {
+  color: #88929c;
+  text-decoration: none;
+}
+
 .nav-container {
-  background-color: #282c34;
+  background-color: white;
   margin: 40px 0 20px;
 }
 
-.nav-link {
-  font-size: 20px;
-  color:  white;
+.name {
+  color: #222;
+  font-size: 48px;
+  text-align: center;
+  cursor: pointer;
 }
 
-.name {
-  color: white;
+.nav-links-container {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.nav-link {
+  font-size: 24px;
+  color:  #222;
+  margin: 0 60px;
+  cursor: pointer;
+  display: inline;
+}
+
+.active {
+  color: #88929c;
+  border-bottom: 1px solid #eee;
+}
+
+.subpart-container {
+  margin-top: 50px;
+}
+
+.subpart-header {
   font-size: 36px;
+  color: #222;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.smidge {
+  height: 30px;
+}
+
+.subpart-body {
+  padding-top: 16px;
+}
+
+.subpart-title {
+  font-size: 24px;
+  color: #88929c;
+}
+
+.subpart-text {
+  font-size: 16px;
+  color: #222;
+}
+
+.subpart-time {
+  font-size: 20px;
+  color: #222;
+  display: flex;
+  justify-content: flex-end;
 }
