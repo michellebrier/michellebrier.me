@@ -8,6 +8,8 @@ let cx = classNames.bind(styles);
 
 var styles = {
   active: 'active',
+  show: 'show',
+  home: 'home',
 }
 
 class App extends Component {
@@ -18,6 +20,7 @@ class App extends Component {
       experienceOpen: false,
       skillsOpen: false,
       interestsOpen: false,
+      homeOpen: true,
     };
   }
 
@@ -26,6 +29,7 @@ class App extends Component {
     this.setState({ experienceOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
+    this.setState({ homeOpen: true });
   }
 
   openEducation() {
@@ -33,6 +37,7 @@ class App extends Component {
     this.setState({ experienceOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
+    this.setState({ homeOpen: false });
   }
 
   openExperience() {
@@ -40,6 +45,7 @@ class App extends Component {
     this.setState({ educationOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
+    this.setState({ homeOpen: false });
   }
 
   openSkills() {
@@ -47,6 +53,7 @@ class App extends Component {
     this.setState({ experienceOpen: false });
     this.setState({ educationOpen: false });
     this.setState({ interestsOpen: false });
+    this.setState({ homeOpen: false });
   }
 
   openInterests() {
@@ -54,6 +61,7 @@ class App extends Component {
     this.setState({ experienceOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ educationOpen: false });
+    this.setState({ homeOpen: false });
   }
 
   renderNavigation() {
@@ -211,10 +219,11 @@ class App extends Component {
       experienceOpen,
       skillsOpen,
       interestsOpen,
+      homeOpen,
     } = this.state;
 
     return (
-      <div className="App">
+      <div className="container">
         <Helmet>
           <title>Michelle Brier</title>
           <meta charset="utf-8" />
@@ -223,7 +232,7 @@ class App extends Component {
           <meta name="description" content="Michelle Brier - Online Portfolio" />
         </Helmet>
         <Grid>
-          <div className="nav-container">
+          <div className={cx('nav-container', { home: homeOpen })}>
             <Row>
               <p className="name" onClick={() => this.goHome()}>Michelle Brier</p>
             </Row>
@@ -233,24 +242,18 @@ class App extends Component {
               </div>
             </Row>
           </div>
-          {educationOpen &&
-            <div className="subpart-container">
-              <h3 className="subpart-header">Education</h3>
-              {this.renderEducation()}
-            </div>
-          }
-          {experienceOpen &&
-            <div className="subpart-container">
-              <h3 className="subpart-header">Experience</h3>
-              {this.renderExperience()}
-            </div>
-          }
-          {skillsOpen &&
-            <div className="subpart-container">
-              <h3 className="subpart-header">Skills</h3>
-              {this.renderSkills()}
-            </div>
-          }
+          <div className={cx('subpart-container', { show: educationOpen })}>
+            <h3 className="subpart-header">Education</h3>
+            {this.renderEducation()}
+          </div>
+          <div className={cx('subpart-container', { show: experienceOpen })}>
+            <h3 className="subpart-header">Experience</h3>
+            {this.renderExperience()}
+          </div>
+          <div className={cx('subpart-container', { show: skillsOpen })}>
+            <h3 className="subpart-header">Skills</h3>
+            {this.renderSkills()}
+          </div>
         </Grid>
       </div>
     );
