@@ -46,19 +46,23 @@ a:hover {
 
 .nav-container {
   background-color: white;
-  margin: 40px 0 20px;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  width: 100vw;
+  text-align: center;
+  margin-top: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  transition: top 0.35s ease-in;
+  transition: margin-top 0.35s ease-in;
+  overflow: wrap;
+  word-break: break-all;
+  min-width: 450px;
 }
 
 .home {
-  top: 40%;
+  margin-top: 40vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: top 0.35s ease-out;
+  transition: margin-top 0.35s ease-out;
 }
 
 .name {
@@ -66,15 +70,19 @@ a:hover {
   font-size: 48px;
   text-align: center;
   cursor: pointer;
-  background: #222;
+  /*background: #222;*/
+  background: #1C2833;
+  height: 2em;
+  padding: 0.4em 0;
 }
 
 .name:hover {
-  color: #d6dbe0;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 37%, rgba(252,176,69,1) 83%);
 }
 
 .nav-links-container {
-  margin-top: 36px;
+  margin: 36px 0;
 }
 
 .nav-link {
@@ -86,28 +94,28 @@ a:hover {
 }
 
 .nav-link:hover {
-  color: #88929c;
+  color: #AAB7B8;
 }
 
 .active {
-  color: #88929c;
+  color: #AAB7B8;
   border-bottom: 1px solid #eee;
 }
 
 .subpart-container {
   max-height: 0;
-  position: fixed;
-  top: 25%;
+  position: absolute;
+  margin: 220px 0 150px;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 60%;
+  width: 60vw;
   overflow: hidden;
   transition: max-height 0.15s ease-out;
 }
 
 .show {
-  max-height: 800px;
-  transition: max-height 0.5s ease-in;
+  max-height: 5000px;
+  transition: max-height 0.8s ease-in;
 }
 
 .subpart-header {
@@ -121,13 +129,22 @@ a:hover {
   height: 30px;
 }
 
+.half-smidge {
+  height: 15px;
+}
+
 .subpart-body {
   padding-top: 16px;
 }
 
 .subpart-title {
   font-size: 24px;
-  color: #88929c;
+  color: #AAB7B8;
+}
+
+.subpart-subtitle {
+  font-size: 20px;
+  color: #222;
 }
 
 .subpart-text {
@@ -140,4 +157,14 @@ a:hover {
   color: #222;
   display: flex;
   justify-content: flex-end;
+}
+
+.subpart-links {
+  text-align: center;
+}
+
+.images {
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
 }

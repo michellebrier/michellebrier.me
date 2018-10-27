@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 import { Grid, Col, Row } from 'react-bootstrap';
 import classNames from 'classnames/bind';
 import './App.css';
+import github from './github.png';
+import linkedin from './linkedin.jpeg';
 
 let cx = classNames.bind(styles);
 
@@ -20,6 +22,7 @@ class App extends Component {
       experienceOpen: false,
       skillsOpen: false,
       interestsOpen: false,
+      linksOpen: false,
       homeOpen: true,
     };
   }
@@ -29,6 +32,7 @@ class App extends Component {
     this.setState({ experienceOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
+    this.setState({ linksOpen: false });
     this.setState({ homeOpen: true });
   }
 
@@ -37,6 +41,7 @@ class App extends Component {
     this.setState({ experienceOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
+    this.setState({ linksOpen: false });
     this.setState({ homeOpen: false });
   }
 
@@ -45,6 +50,7 @@ class App extends Component {
     this.setState({ educationOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
+    this.setState({ linksOpen: false });
     this.setState({ homeOpen: false });
   }
 
@@ -53,11 +59,22 @@ class App extends Component {
     this.setState({ experienceOpen: false });
     this.setState({ educationOpen: false });
     this.setState({ interestsOpen: false });
+    this.setState({ linksOpen: false });
     this.setState({ homeOpen: false });
   }
 
   openInterests() {
     this.setState({ interestsOpen: true });
+    this.setState({ experienceOpen: false });
+    this.setState({ skillsOpen: false });
+    this.setState({ educationOpen: false });
+    this.setState({ linksOpen: false });
+    this.setState({ homeOpen: false });
+  }
+
+  openLinks() {
+    this.setState({ interestsOpen: false });
+    this.setState({ linksOpen: true });
     this.setState({ experienceOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ educationOpen: false });
@@ -70,7 +87,7 @@ class App extends Component {
         <p className={cx('nav-link', { active: this.state.educationOpen })} onClick={() => this.openEducation()}>Education</p>
         <p className={cx('nav-link', { active: this.state.experienceOpen })} onClick={() => this.openExperience()}>Experience</p>
         <p className={cx('nav-link', { active: this.state.skillsOpen })} onClick={() => this.openSkills()}>Skills</p>
-        <p className={cx('nav-link', { active: this.state.interestsOpen })} onClick={() => this.openInterests()}>Interests</p>
+        <p className={cx('nav-link', { active: this.state.linksOpen })} onClick={() => this.openLinks()}>Links</p>
       </div>
     );
   }
@@ -95,6 +112,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col xs={12} md={12}>
+            <p className="subpart-text"><em>B.A. Computer Science, B.A. Economics</em></p>
             <p className="subpart-text"><b>GPA:</b> 3.7</p>
           </Col>
         </Row>
@@ -181,6 +199,78 @@ class App extends Component {
             <li>Created and integrated new front-end features such as product display sliders and redesigned product list page</li>
           </Col>
         </Row>
+        <div className="smidge" />
+        <Row>
+          <Col xs={8} md={8}>
+            <a 
+              className="subpart-title"
+              href="https://fossa.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              FOSSA
+            </a>
+          </Col>
+          <Col xs={4} md={4}>
+            <p className="subpart-time">May 2017 - Jul. 2017</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={12}>
+            <p className="subpart-text"><em>Developer Outreach Intern</em></p>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={12} className="subpart-text">
+            <li>Researched open source projects compatible with FOSSA’s technology and without license/compliance scans</li>
+            <li>Helped integrate FOSSA’s technology into OSS code through GitHub PRs and communication with developers</li>
+            <li>Outreach to OSS developers to integrate FOSSA’s compliance check was main driver of user base expansion</li>
+          </Col>
+        </Row>
+        <div className="smidge" />
+        <Row>
+          <Col xs={8} md={8}>
+            <a 
+              className="subpart-title"
+              href="https://valleyconsultinggroup.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Valley Consulting Group
+            </a>
+          </Col>
+          <Col xs={4} md={4}>
+            <p className="subpart-time">Sept. 2017 - Present</p>
+          </Col>
+        </Row>
+        <div className="half-smidge" />
+        <Row>
+          <Col xs={12} md={12} className="subpart-text">
+            <p className="subpart-subtitle">Google</p>
+            <p className="subpart-text"><em>Senior Stratey Consultant</em></p>
+            <li>Worked with senior UX researchers to isolate and analyze important UI/UX features within navigation apps</li>
+            <li>Conducted survey and focus groups and analyzed results to isolate impact of key features used in Google Maps</li>
+            <li>Researched GIS software provider offerings and analyzed modern digital integration of cartographic principles</li>
+          </Col>
+        </Row>
+        <div className="half-smidge" />
+        <Row>
+          <Col xs={12} md={12} className="subpart-text">
+            <p className="subpart-subtitle">Genentech</p>
+            <p className="subpart-text"><em>Stratey Consultant</em></p>
+            <li>Worked with senior managers to design a case competition to attract MBA students to Genentech’s MA&S dept.</li>
+            <li>Designed and wrote full MBA case competition – implemented and launched by Genentech within 6 months</li>
+          </Col>
+        </Row>
+        <div className="half-smidge" />
+        <Row>
+          <Col xs={12} md={12} className="subpart-text">
+            <p className="subpart-subtitle">Dropbox</p>
+            <p className="subpart-text"><em>Stratey Consultant</em></p>
+            <li>Worked with Head of Enterprise Marketing to research effective SMB-focused B2B marketing strategies</li>
+            <li>Compiled several 100+ page reports detailing research on messaging, marketing channels, and property structures</li>
+          </Col>
+        </Row>
       </div>
     );
   }
@@ -213,12 +303,40 @@ class App extends Component {
     );
   }
 
+  renderLinks() {
+    return (
+      <div className="subpart-body">
+        <Row>
+          <Col xs={12} md={12} className="subpart-links">
+            <a
+              className="subpart-title"
+              href="https://github.com/michellebrier"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={github} className="images" alt="GitHub" />
+            </a>
+            <a
+              className="subpart-title"
+              href="https://www.linkedin.com/in/briermichelle/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin} className="images" alt="LinkedIn" />
+            </a>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+
   render() {
     const {
       educationOpen,
       experienceOpen,
       skillsOpen,
       interestsOpen,
+      linksOpen,
       homeOpen,
     } = this.state;
 
@@ -232,7 +350,7 @@ class App extends Component {
           <meta name="description" content="Michelle Brier - Online Portfolio" />
         </Helmet>
         <Grid>
-          <div className={cx('nav-container', { home: homeOpen })}>
+          <div className={cx('nav-container', { home: homeOpen })} style={{zIndex: '1'}}>
             <Row>
               <p className="name" onClick={() => this.goHome()}>Michelle Brier</p>
             </Row>
@@ -253,6 +371,10 @@ class App extends Component {
           <div className={cx('subpart-container', { show: skillsOpen })}>
             <h3 className="subpart-header">Skills</h3>
             {this.renderSkills()}
+          </div>
+          <div className={cx('subpart-container', { show: linksOpen })}>
+            <h3 className="subpart-header">Links</h3>
+            {this.renderLinks()}
           </div>
         </Grid>
       </div>
