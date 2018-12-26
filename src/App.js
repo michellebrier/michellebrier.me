@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Grid, Col, Row } from 'react-bootstrap';
 import classNames from 'classnames/bind';
+import ReactGA from 'react-ga';
 import './App.css';
 import github from './github.png';
 import linkedin from './linkedin.jpeg';
@@ -25,6 +26,15 @@ class App extends Component {
       linksOpen: false,
       homeOpen: true,
     };
+  }
+
+  initializeReactGA() {
+    ReactGA.initialize('UA-131401093-1');
+    ReactGA.pageview('/homepage');
+  }
+
+  componentDidMount() {
+    this.initializeReactGA();
   }
 
   goHome() {
