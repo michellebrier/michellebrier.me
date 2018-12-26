@@ -52,7 +52,7 @@ a:hover {
   margin-top: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  transition: margin-top 0.35s ease-in;
+  transition: margin-top 0.25s ease-in;
   overflow: wrap;
   word-break: break-all;
   min-width: 450px;
