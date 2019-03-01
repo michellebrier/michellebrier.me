@@ -52,7 +52,7 @@ a:hover {
   margin-top: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  transition: margin-top 0.25s ease-in;
+  transition: margin-top 0.35s ease-in;
   overflow: wrap;
   word-break: break-all;
   min-width: 450px;
@@ -115,7 +115,8 @@ a:hover {
 
 .show {
   max-height: 5000px;
-  transition: max-height 0.8s ease-in;
+  transition: max-height 0.7s ease-in;
+  transition-delay: 0.20s;
 }
 
 .subpart-header {
@@ -150,6 +151,11 @@ a:hover {
 .subpart-text {
   font-size: 16px;
   color: #222;
+}
+
+.subpart-link {
+  font-size: 16px;
+  color: #AAB7B8;
 }
 
 .subpart-time {

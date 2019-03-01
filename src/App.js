@@ -131,14 +131,48 @@ class App extends Component {
             <p><b>Relevant coursework: </b></p>
             <Row>
               <Col xs={6} md={6}>
-                <li>Data Structures & Algorithms</li>
-                <li>Advanced & Efficient Algorithms</li>
-                <li>Computer Architecture</li>
+                <li>CS 61B: Data Structures & Algorithms</li>
+                <li>CS 170: Advanced & Efficient Algorithms</li>
+                <li>CS 61C: Computer Architecture</li>
+                <li>CS 161: Computer Security</li>
+                <li>CS 186: Database Systems</li>
               </Col>
               <Col xs={6} md={6}>
-                <li>Discrete Math & Probability Theory</li>
-                <li>Applied Data Science with Venture Applications</li>
-                <li>Internet Architecture and Protocols</li>
+                <li>CS 70: Discrete Math & Probability Theory</li>
+                <li>IND ENG 135: Applied Data Science with Venture Applications</li>
+                <li>CS 168: Internet Architecture and Protocols</li>
+                <li>CS184: Computer Graphics and Imaging</li>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+        <br />
+        <Row>
+          <Col xs={12} md={12} className="subpart-text">
+            <p><b>Activities: </b></p>
+            <Row>
+              <Col xs={6} md={6}>
+                <li>
+                <a
+                  className="subpart-link"
+                  href="https://csmberkeley.github.io/#/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                Computer Science Mentors:
+                </a>
+                {' '}CS 61A Mentor
+                </li>
+                <li>
+                <a
+                  className="subpart-link"
+                  href="http://gamescrafters.berkeley.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                GamesCrafters
+                </a>
+                </li>
               </Col>
             </Row>
           </Col>
@@ -250,7 +284,7 @@ class App extends Component {
             </a>
           </Col>
           <Col xs={4} md={4}>
-            <p className="subpart-time">Sept. 2017 - Present</p>
+            <p className="subpart-time">Sept. 2017 - Dec. 2018</p>
           </Col>
         </Row>
         <div className="half-smidge" />
@@ -291,9 +325,11 @@ class App extends Component {
         <Row>
           <Col xs={12} md={12} className="subpart-text">
             <p><b>General: </b></p>
-              <li>Java</li>
               <li>Python</li>
-              <li>C</li>
+              <li>Java</li>
+              <li>C/C++</li>
+              <li>Golang</li>
+              <li>SQL</li>
               <li>Pandas</li>
               <li>NumPy</li>
             <div className="smidge" />
