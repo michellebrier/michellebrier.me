@@ -141,7 +141,7 @@ class App extends Component {
                 <li>CS 70: Discrete Math & Probability Theory</li>
                 <li>IND ENG 135: Applied Data Science with Venture Applications</li>
                 <li>CS 168: Internet Architecture and Protocols</li>
-                <li>CS184: Computer Graphics and Imaging</li>
+                <li>CS 184: Computer Graphics and Imaging</li>
               </Col>
             </Row>
           </Col>
