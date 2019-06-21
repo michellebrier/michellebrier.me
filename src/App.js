@@ -43,6 +43,7 @@ class App extends Component {
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
     this.setState({ linksOpen: false });
+    this.setState({ projectsOpen: false });
     this.setState({ homeOpen: true });
   }
 
@@ -52,6 +53,7 @@ class App extends Component {
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
     this.setState({ linksOpen: false });
+    this.setState({ projectsOpen: false });
     this.setState({ homeOpen: false });
   }
 
@@ -61,6 +63,7 @@ class App extends Component {
     this.setState({ skillsOpen: false });
     this.setState({ interestsOpen: false });
     this.setState({ linksOpen: false });
+    this.setState({ projectsOpen: false });
     this.setState({ homeOpen: false });
   }
 
@@ -70,6 +73,7 @@ class App extends Component {
     this.setState({ educationOpen: false });
     this.setState({ interestsOpen: false });
     this.setState({ linksOpen: false });
+    this.setState({ projectsOpen: false });
     this.setState({ homeOpen: false });
   }
 
@@ -79,15 +83,27 @@ class App extends Component {
     this.setState({ skillsOpen: false });
     this.setState({ educationOpen: false });
     this.setState({ linksOpen: false });
+    this.setState({ projectsOpen: false });
     this.setState({ homeOpen: false });
   }
 
   openLinks() {
     this.setState({ interestsOpen: false });
-    this.setState({ linksOpen: true });
     this.setState({ experienceOpen: false });
     this.setState({ skillsOpen: false });
     this.setState({ educationOpen: false });
+    this.setState({ linksOpen: true });
+    this.setState({ projectsOpen: false });
+    this.setState({ homeOpen: false });
+  }
+
+  openProjects() {
+    this.setState({ interestsOpen: false });
+    this.setState({ experienceOpen: false });
+    this.setState({ skillsOpen: false });
+    this.setState({ educationOpen: false });
+    this.setState({ linksOpen: false });
+    this.setState({ projectsOpen: true });
     this.setState({ homeOpen: false });
   }
 
@@ -98,6 +114,7 @@ class App extends Component {
         <p className={cx('nav-link', { active: this.state.experienceOpen })} onClick={() => this.openExperience()}>Experience</p>
         <p className={cx('nav-link', { active: this.state.skillsOpen })} onClick={() => this.openSkills()}>Skills</p>
         <p className={cx('nav-link', { active: this.state.linksOpen })} onClick={() => this.openLinks()}>Links</p>
+        <p className={cx('nav-link', { active: this.state.projectsOpen })} onClick={() => this.openProjects()}>Projects</p>
       </div>
     );
   }
@@ -402,6 +419,67 @@ class App extends Component {
     );
   }
 
+  renderProjects() {
+    return (
+      <div className="subpart-body">
+        <Row>
+          <Col xs={12} md={12} className="subpart-text">
+            <li>
+              <a
+                className="subpart-title"
+                href="http://www.peterqiu.com/cs184-final-project-proposal/final.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Accelerating Path Tracing with NVIDIA’s CUDA and OptiX Ray Tracing Engines
+              </a>
+            </li>
+            <li>
+              <a
+                className="subpart-title"
+                href="https://cal-cs184-student.github.io/p3-1-pathtracer-michellebrier/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Simple Pathtracer (Pt 1)
+              </a>
+            </li>
+            <li>
+              <a
+                className="subpart-title"
+                href="https://cal-cs184-student.github.io/p3-2-pathtracer-michellebrier/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Simple Pathtracer (Pt 2)
+              </a>
+            </li>
+            <li>
+              <a
+                className="subpart-title"
+                href="https://cal-cs184-student.github.io/p2-meshedit-michellebrier/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mesh Editor
+              </a>
+            </li>
+            <li>
+              <a
+                className="subpart-title"
+                href="https://cal-cs184-student.github.io/p1-rasterizer-michellebrier/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Rasterizer
+              </a>
+            </li>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+
   render() {
     const {
       educationOpen,
@@ -409,6 +487,7 @@ class App extends Component {
       skillsOpen,
       interestsOpen,
       linksOpen,
+      projectsOpen,
       homeOpen,
     } = this.state;
 
@@ -447,6 +526,10 @@ class App extends Component {
           <div className={cx('subpart-container', { show: linksOpen })}>
             <h3 className="subpart-header">Links</h3>
             {this.renderLinks()}
+          </div>
+          <div className={cx('subpart-container', { show: projectsOpen })}>
+            <h3 className="subpart-header">Projects</h3>
+            {this.renderProjects()}
           </div>
         </Grid>
       </div>
