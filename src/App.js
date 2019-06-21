@@ -188,6 +188,32 @@ class App extends Component {
           <Col xs={8} md={8}>
             <a 
               className="subpart-title"
+              href="https://www.flexport.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Flexport
+            </a>
+          </Col>
+          <Col xs={4} md={4}>
+            <p className="subpart-time">May 2019 - Present</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={12}>
+            <p className="subpart-text"><em>Software Engineering Intern</em></p>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={12} className="subpart-text">
+            <li>Quoting team!</li>
+          </Col>
+        </Row>
+        <div className="smidge" />
+        <Row>
+          <Col xs={8} md={8}>
+            <a 
+              className="subpart-title"
               href="https://www.gethearth.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -291,7 +317,7 @@ class App extends Component {
         <Row>
           <Col xs={12} md={12} className="subpart-text">
             <p className="subpart-subtitle">Google</p>
-            <p className="subpart-text"><em>Senior Stratey Consultant</em></p>
+            <p className="subpart-text"><em>Senior Strategy Consultant</em></p>
             <li>Worked with senior UX researchers to isolate and analyze important UI/UX features within navigation apps</li>
             <li>Conducted survey and focus groups and analyzed results to isolate impact of key features used in Google Maps</li>
             <li>Researched GIS software provider offerings and analyzed modern digital integration of cartographic principles</li>
@@ -301,7 +327,7 @@ class App extends Component {
         <Row>
           <Col xs={12} md={12} className="subpart-text">
             <p className="subpart-subtitle">Genentech</p>
-            <p className="subpart-text"><em>Stratey Consultant</em></p>
+            <p className="subpart-text"><em>Strategy Consultant</em></p>
             <li>Worked with senior managers to design a case competition to attract MBA students to Genentech’s MA&S dept.</li>
             <li>Designed and wrote full MBA case competition – implemented and launched by Genentech within 6 months</li>
           </Col>
@@ -310,7 +336,7 @@ class App extends Component {
         <Row>
           <Col xs={12} md={12} className="subpart-text">
             <p className="subpart-subtitle">Dropbox</p>
-            <p className="subpart-text"><em>Stratey Consultant</em></p>
+            <p className="subpart-text"><em>Strategy Consultant</em></p>
             <li>Worked with Head of Enterprise Marketing to research effective SMB-focused B2B marketing strategies</li>
             <li>Compiled several 100+ page reports detailing research on messaging, marketing channels, and property structures</li>
           </Col>
