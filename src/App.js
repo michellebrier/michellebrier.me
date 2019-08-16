@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import { Grid, Col, Row } from 'react-bootstrap';
+import { Grid, Row } from 'react-bootstrap';
 import classNames from 'classnames/bind';
 import ReactGA from 'react-ga';
 
