@@ -2,7 +2,7 @@
   "name": "michellebrier.me",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https:/www.michellebrier.me",
+  "homepage": "https://www.michellebrier.me",
   "dependencies": {
     "ajv": "^6.10.0",
     "classnames": "^2.2.6",
