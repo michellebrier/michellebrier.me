@@ -1,163 +1,161 @@
-import React, { Component } from 'react';
-import { Helmet } from 'react-helmet';
-import { Grid, Row } from 'react-bootstrap';
-import classNames from 'classnames/bind';
-import ReactGA from 'react-ga';
+import React, { Component } from "react";
+import { Helmet } from "react-helmet";
+import { Grid, Row, Col } from "react-bootstrap";
+import ReactGA from "react-ga";
 
-import './App.css';
-
-import ProjectsPage from './pages/ProjectsPage';
-import LinksPage from './pages/LinksPage';
-import SkillsPage from './pages/SkillsPage';
-import ExperiencePage from './pages/ExperiencePage';
-import EducationPage from './pages/EducationPage';
-
-let cx = classNames.bind(styles);
-
-var styles = {
-  active: 'active',
-  show: 'show',
-  home: 'home',
-}
+import "./App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      educationOpen: false,
-      experienceOpen: false,
-      skillsOpen: false,
-      linksOpen: false,
-      homeOpen: true,
-    };
-  }
-
   initializeReactGA() {
-    ReactGA.initialize('UA-131401093-1');
-    ReactGA.pageview('/homepage');
+    ReactGA.initialize("UA-131401093-1");
+    ReactGA.pageview("/homepage");
   }
 
   componentDidMount() {
     this.initializeReactGA();
   }
 
-  goHome() {
-    this.setState({ educationOpen: false });
-    this.setState({ experienceOpen: false });
-    this.setState({ skillsOpen: false });
-    this.setState({ linksOpen: false });
-    this.setState({ projectsOpen: false });
-    this.setState({ homeOpen: true });
-  }
-
-  openEducation() {
-    this.setState({ educationOpen: true });
-    this.setState({ experienceOpen: false });
-    this.setState({ skillsOpen: false });
-    this.setState({ linksOpen: false });
-    this.setState({ projectsOpen: false });
-    this.setState({ homeOpen: false });
-  }
-
-  openExperience() {
-    this.setState({ experienceOpen: true });
-    this.setState({ educationOpen: false });
-    this.setState({ skillsOpen: false });
-    this.setState({ linksOpen: false });
-    this.setState({ projectsOpen: false });
-    this.setState({ homeOpen: false });
-  }
-
-  openSkills() {
-    this.setState({ skillsOpen: true });
-    this.setState({ experienceOpen: false });
-    this.setState({ educationOpen: false });
-    this.setState({ linksOpen: false });
-    this.setState({ projectsOpen: false });
-    this.setState({ homeOpen: false });
-  }
-
-  openLinks() {
-    this.setState({ experienceOpen: false });
-    this.setState({ skillsOpen: false });
-    this.setState({ educationOpen: false });
-    this.setState({ linksOpen: true });
-    this.setState({ projectsOpen: false });
-    this.setState({ homeOpen: false });
-  }
-
-  openProjects() {
-    this.setState({ experienceOpen: false });
-    this.setState({ skillsOpen: false });
-    this.setState({ educationOpen: false });
-    this.setState({ linksOpen: false });
-    this.setState({ projectsOpen: true });
-    this.setState({ homeOpen: false });
-  }
-
-  renderNavigation() {
+  renderHeader() {
     return (
       <div>
-        <p className={cx('nav-link', { active: this.state.educationOpen })} onClick={() => this.openEducation()}>Education</p>
-        <p className={cx('nav-link', { active: this.state.experienceOpen })} onClick={() => this.openExperience()}>Experience</p>
-        <p className={cx('nav-link', { active: this.state.skillsOpen })} onClick={() => this.openSkills()}>Skills</p>
-        <p className={cx('nav-link', { active: this.state.projectsOpen })} onClick={() => this.openProjects()}>Projects</p>
-        <p className={cx('nav-link', { active: this.state.linksOpen })} onClick={() => this.openLinks()}>Links</p>
+        <div className="header sectionHeader">Michelle Brier</div>
+        <div className="section">
+          <b>Software Engineer</b>
+          {} | {}
+          <a
+            href="https://github.com/michellebrier"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
+          {} | {}
+          <a
+            href="https://www.linkedin.com/in/briermichelle/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  renderEducation() {
+    return (
+      <div className="section">
+        <div className="sectionHeader">Education</div>
+        <div className="text">
+          UC Berkeley
+          <br />
+          [Aug. 2016 - May 2020]
+          <br />
+          B.A. Computer Science
+          <br />
+          GPA: 3.7
+        </div>
+      </div>
+    );
+  }
+
+  renderExperience() {
+    return (
+      <div className="section">
+        <div className="sectionHeader">Experience</div>
+        <div className="text">
+          <a
+            href="https://www.flexport.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Flexport
+          </a>
+          <br />
+          [Upcoming: Aug. 2020 -]
+          <br />
+          Software Engineer
+        </div>
+        <div className="text">
+          <a
+            href="https://www.flexport.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Flexport
+          </a>
+          <br />
+          [May 2019 - Aug. 2019]
+          <br />
+          Software Engineering Intern
+        </div>
+        <div className="text">
+          <a
+            href="https://www.gethearth.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Shogun Enterprises (DBA Hearth)
+          </a>
+          <br />
+          [May 2018 - Aug. 2018]
+          <br />
+          Software Engineering Intern
+        </div>
+        <div className="text">
+          <a
+            href="https://xeniagifts.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Xenia Gifts
+          </a>
+          <br />
+          [Sept. 2017 - Jan. 2018]
+          <br />
+          Software Engineering Intern
+        </div>
+      </div>
+    );
+  }
+
+  renderSkills() {
+    return (
+      <div class="section">
+        <div className="sectionHeader">Skills</div>
+        <div className="text">
+          GENERAL: Python, Java, C/C++, Golang, SQL, Pandas, NumPy, Vim
+        </div>
+        <div className="text">
+          WEB: Ruby on Rails, React.js, Jinja2, HTML/CSS, JavaScript, HTTP
+        </div>
+        <div className="text">MOBILE: React Native</div>
       </div>
     );
   }
 
   render() {
-    const {
-      educationOpen,
-      experienceOpen,
-      skillsOpen,
-      interestsOpen,
-      linksOpen,
-      projectsOpen,
-      homeOpen,
-    } = this.state;
-
     return (
-      <div className="container">
+      <div>
         <Helmet>
           <title>Michelle Brier</title>
           <meta charset="utf-8" />
           <meta id="og:author" property="og:author" content="Michelle Brier" />
           <meta name="author" content="Michelle Brier" />
-          <meta name="description" content="Michelle Brier - Online Portfolio" />
+          <meta
+            name="description"
+            content="Michelle Brier - Online Portfolio"
+          />
         </Helmet>
         <Grid>
-          <div className={cx('nav-container', { home: homeOpen })} style={{zIndex: '1'}}>
-            <Row>
-              <p className="name" onClick={() => this.goHome()}>Michelle Brier</p>
-            </Row>
-            <Row>
-              <div className="nav-links-container">
-                {this.renderNavigation()}
-              </div>
-            </Row>
-          </div>
-          <div className={cx('subpart-container', { show: educationOpen })}>
-            <h3 className="subpart-header">Education</h3>
-            <EducationPage />
-          </div>
-          <div className={cx('subpart-container', { show: experienceOpen })}>
-            <h3 className="subpart-header">Experience</h3>
-            <ExperiencePage />
-          </div>
-          <div className={cx('subpart-container', { show: skillsOpen })}>
-            <h3 className="subpart-header">Skills</h3>
-            <SkillsPage />
-          </div>
-          <div className={cx('subpart-container', { show: projectsOpen })}>
-            <h3 className="subpart-header">Projects</h3>
-            <ProjectsPage />
-          </div>
-          <div className={cx('subpart-container', { show: linksOpen })}>
-            <h3 className="subpart-header">Links</h3>
-            <LinksPage />
-          </div>
+          <Row className="bodyRow">
+            <Col mdOffset={4} md={4}>
+              {this.renderHeader()}
+              {this.renderEducation()}
+              {this.renderExperience()}
+              {this.renderSkills()}
+            </Col>
+          </Row>
         </Grid>
       </div>
     );
