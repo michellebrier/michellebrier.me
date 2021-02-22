@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Helmet } from "react-helmet";
-import { Grid, Row, Col } from "react-bootstrap";
+import React, {Component} from "react";
+import {Helmet} from "react-helmet";
+import {Grid, Row, Col} from "react-bootstrap";
 import ReactGA from "react-ga";
 
 import "./App.css";
@@ -72,7 +72,7 @@ class App extends Component {
             Flexport
           </a>
           <br />
-          [Upcoming: Aug. 2020 -]
+          [Aug. 2020 - Present]
           <br />
           Software Engineer
         </div>
@@ -151,8 +151,8 @@ class App extends Component {
           <Row className="bodyRow">
             <Col mdOffset={4} md={4}>
               {this.renderHeader()}
-              {this.renderEducation()}
               {this.renderExperience()}
+              {this.renderEducation()}
               {this.renderSkills()}
             </Col>
           </Row>
